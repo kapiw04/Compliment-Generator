@@ -1,0 +1,66 @@
+#:import utils kivy.utils
+Cgenerator:
+
+<Cgenerator>:
+    canvas.before:
+        Color:
+            rgba: (178/255.0, 242/255.0, 107/255.0, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    padding: 0, 0, 0, "40dp"
+    orientation: 'vertical'
+    Label:
+        background_color: (32/255.0, 130/255.0, 17/255.0, 1)
+        size_hint: 1, 0.01
+        font_size: "28px"
+        text: 'Compliment Generator'
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    Label:
+        size_hint: 0.4, 0.01
+        text: "By Kapi <3"
+        font_name: './assets/fonts/DancingScript-VariableFont_wght.ttf'
+        color: (0, 0, 0, 1)
+        font_size: "24px"
+        canvas.before:
+            PushMatrix
+            Rotate:
+                angle: 15
+                origin: self.center
+        canvas.after:
+            PopMatrix
+    Label:
+        color: 0, 0, 0, 1
+        font_size: self.width/15
+        halign:'center'
+        text: root.c
+        font_name: './assets/fonts/Ubuntu-Medium.ttf'
+        size_hint: 1, 0.1
+    RoundedButton:
+        font_name: './assets/fonts/Roboto-Bold.ttf'
+        text: 'GENERATE!'
+        font_size: "48px"
+        size_hint: 0.85, None
+        height: "70dp"
+        on_press: root.random_c()
+#        background_normal: ''
+#        background_color: utils.get_color_from_hex("#208211")
+        pos_hint: { 'center_x': 0.5, 'y': 0.2 }
+
+
+<RoundedButton@Button>
+    id: "btn"
+    background_color: (0, 0, 0, 0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgb: utils.get_color_from_hex("#208211")
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [18]

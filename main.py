@@ -22,9 +22,6 @@ for i in plural:
 pr = open("przymiotniki.txt", "r", encoding='utf8')
 word_two = pr.read().splitlines()
 
-Window.size = (414, 896)
-
-
 class Cgenerator(BoxLayout):
     c = StringProperty('')
 
